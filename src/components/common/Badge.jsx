@@ -1,0 +1,1 @@
+export default function Badge({children,tone='violet'}){const colors={violet:'bg-violet-400/10 text-violet-300',green:'bg-emerald-400/10 text-emerald-300',orange:'bg-orange-400/10 text-orange-300',blue:'bg-sky-400/10 text-sky-300'};return <span className={`inline-flex rounded-full px-2.5 py-1 text-xs font-medium ${colors[tone]||colors.violet}`}>{children}</span>}

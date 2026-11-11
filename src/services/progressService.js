@@ -1,0 +1,1 @@
+import {storage} from './storageService'; export const getProgress=()=>storage.get('ms-progress',{}); export const saveProgress=(id,value)=>storage.set('ms-progress',{...getProgress(),[id]:value});

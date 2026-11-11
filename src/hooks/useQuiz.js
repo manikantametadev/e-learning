@@ -1,0 +1,1 @@
+import {useState} from 'react';export default function useQuiz(){const [answers,setAnswers]=useState({});const choose=(id,value)=>setAnswers(a=>({...a,[id]:value}));return {answers,choose,reset:()=>setAnswers({})}}

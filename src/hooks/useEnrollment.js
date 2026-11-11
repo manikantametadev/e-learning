@@ -1,0 +1,1 @@
+import useLocalStorage from './useLocalStorage';export default function useEnrollment(){const [ids,setIds]=useLocalStorage('ms-enrollments',[1,2,5]);const enroll=id=>setIds([...new Set([...ids,Number(id)])]);return {ids,enroll,isEnrolled:id=>ids.includes(Number(id))}}

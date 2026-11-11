@@ -1,0 +1,1 @@
+export const categories=[{name:'Design',count:18},{name:'Development',count:24},{name:'Business',count:12},{name:'Technology',count:16}];

@@ -1,0 +1,1 @@
+export const instructors=[{name:'Dann Petty',role:'Senior Developer',avatar:'https://i.pravatar.cc/80?img=11'},{name:'Michelle Choi',role:'Product Designer',avatar:'https://i.pravatar.cc/80?img=47'},{name:'Alex Morgan',role:'Data Strategist',avatar:'https://i.pravatar.cc/80?img=13'}];

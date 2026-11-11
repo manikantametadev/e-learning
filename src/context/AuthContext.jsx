@@ -1,0 +1,1 @@
+import {createContext,useContext} from 'react';import {currentUser} from '../data/users';const AuthContext=createContext(currentUser);export const useAuth=()=>useContext(AuthContext);export default function AuthProvider({children}){return <AuthContext.Provider value={currentUser}>{children}</AuthContext.Provider>}

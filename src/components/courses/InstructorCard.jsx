@@ -1,0 +1,1 @@
+export default function InstructorCard({name='Michelle Choi',role='Course instructor'}){return <div className="flex items-center gap-3"><img src="https://i.pravatar.cc/80?img=47" className="h-10 w-10 rounded-full"/><div><p className="text-sm font-medium">{name}</p><p className="text-xs text-slate-500">{role}</p></div></div>}

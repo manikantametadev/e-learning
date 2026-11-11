@@ -1,0 +1,1 @@
+import LessonItem from './LessonItem';export default function LessonList({lessons,active,onSelect}){return <div className="space-y-1">{lessons.map(l=><LessonItem key={l.id} lesson={l} active={active===l.id} onClick={()=>onSelect(l.id)}/>)}</div>}

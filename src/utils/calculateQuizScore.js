@@ -1,0 +1,1 @@
+export const calculateQuizScore=(answers,questions)=>questions.length?Math.round(answers.filter((a,i)=>a===questions[i].answer).length/questions.length*100):0;

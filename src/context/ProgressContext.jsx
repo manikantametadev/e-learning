@@ -1,0 +1,1 @@
+import {createContext,useContext} from 'react';import useProgress from '../hooks/useProgress';const ProgressContext=createContext(null);export const useProgressData=()=>useContext(ProgressContext);export default function ProgressProvider({children}){const value=useProgress();return <ProgressContext.Provider value={value}>{children}</ProgressContext.Provider>}

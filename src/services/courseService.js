@@ -1,0 +1,1 @@
+import {courses} from '../data/courses'; export const getCourses=()=>Promise.resolve(courses); export const getCourse=(id)=>Promise.resolve(courses.find(c=>c.id===Number(id)));

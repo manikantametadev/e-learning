@@ -1,0 +1,1 @@
+export const lessons=[{id:1,title:'Welcome & course overview',duration:'04:12',done:true},{id:2,title:'Understanding the fundamentals',duration:'12:45',done:true},{id:3,title:'Core concepts and principles',duration:'18:20',done:false},{id:4,title:'Practical workflow',duration:'14:08',done:false},{id:5,title:'Knowledge check',duration:'08:30',done:false}];

@@ -1,0 +1,1 @@
+import {createContext,useContext} from 'react';import {courses} from '../data/courses';const CourseContext=createContext(courses);export const useCourseData=()=>useContext(CourseContext);export default function CourseProvider({children}){return <CourseContext.Provider value={courses}>{children}</CourseContext.Provider>}

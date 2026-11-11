@@ -1,0 +1,1 @@
+import {Timer} from 'lucide-react';export default function QuizTimer({time='14:32'}){return <span className="inline-flex items-center gap-2 rounded-lg bg-orange-400/10 px-3 py-2 text-xs text-orange-200"><Timer size={14}/>{time} remaining</span>}

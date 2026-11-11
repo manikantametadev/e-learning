@@ -1,0 +1,1 @@
+import QuizResult from '../../components/quiz/QuizResult';import {Link} from 'react-router-dom';export default function QuizResults(){return <div><Link to="/quizzes" className="mb-6 inline-block text-xs text-violet-300">← Back to quizzes</Link><QuizResult score={86} onRetry={()=>{}}/></div>}

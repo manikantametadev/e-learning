@@ -1,0 +1,1 @@
+export default function AnswerOption({label,selected,onClick}){return <button onClick={onClick} className={`w-full rounded-xl border p-4 text-left text-sm transition ${selected?'border-violet-400 bg-violet-400/10 text-violet-100':'border-white/[0.07] bg-white/[0.02] text-slate-300 hover:bg-white/[0.05]'}`}>{label}</button>}

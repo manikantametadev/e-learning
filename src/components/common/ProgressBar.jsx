@@ -1,0 +1,1 @@
+export default function ProgressBar({value=0,color='bg-violet-400'}){return <div className="h-1.5 overflow-hidden rounded-full bg-white/8"><div className={`h-full rounded-full ${color} transition-all`} style={{width:`${value}%`}}/></div>}

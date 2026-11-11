@@ -1,0 +1,1 @@
+export const calculateProgress=(done,total)=>total?Math.round(done/total*100):0;

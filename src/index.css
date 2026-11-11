@@ -1,0 +1,612 @@
+@import "tailwindcss";
+
+:root {
+    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #f3f0fb;
+    background: #3b3a43;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.app-shell {
+  height: 100vh;
+  min-height: 0;
+}
+
+button,
+input,
+select {
+    font: inherit
+}
+
+button {
+    cursor: pointer
+}
+
+::selection {
+    background: #a78bfa;
+    color: #fff
+}
+
+
+.panel {
+    background: linear-gradient(145deg, #1d1c24, #18171e);
+    border: 1px solid #292733;
+    box-shadow: inset 0 1px #ffffff08
+}
+
+.muted {
+    color: #9996a8
+}
+
+.gradient-text {
+    background: linear-gradient(90deg, #45b7ff, #c07bfa, #ff8a9d);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent
+}
+
+.glow-border {
+    border: 1px solid transparent;
+    background: linear-gradient(#171923, #171923) padding-box, linear-gradient(115deg, #8c7bff, #db65d6, #f58a9d) border-box;
+    box-shadow: 0 0 22px #a855f733
+}
+
+.soft-scroll::-webkit-scrollbar {
+    width: 5px
+}
+
+.soft-scroll::-webkit-scrollbar-thumb {
+    background: #393544;
+    border-radius: 20px
+}
+
+.calendar-cell {
+    height: 28px;
+    border-radius: 7px;
+    background: #302b40
+}
+
+.calendar-cell.active {
+    background: #9b75f3;
+    box-shadow: 0 0 12px #9b75f355
+}
+
+.calendar-cell.striped {
+    background: repeating-linear-gradient(105deg, #8c6adf 0px, #8c6adf 1px, #302b40 1px, #302b40 3px)
+}
+
+
+/* Sidebar scrollbar */
+.soft-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(139, 92, 246, 0.2) transparent;
+}
+
+.soft-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.soft-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.soft-scroll::-webkit-scrollbar-thumb {
+  background: rgba(139, 92, 246, 0.2);
+  border-radius: 20px;
+}
+
+.soft-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(139, 92, 246, 0.5);
+}
+
+
+
+/* =========================================
+   DASHBOARD ANIMATIONS
+========================================= */
+
+.dashboard-page {
+  animation: pageReveal 0.55s ease both;
+}
+
+@keyframes pageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Entrance animation */
+
+.dashboard-enter {
+  animation: contentReveal 0.65s cubic-bezier(.2,.7,.2,1) both;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+@keyframes contentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-1 { animation-delay: 80ms; }
+.stagger-2 { animation-delay: 150ms; }
+.stagger-3 { animation-delay: 220ms; }
+.stagger-4 { animation-delay: 290ms; }
+
+/* Statistics card hover */
+
+.dashboard-enter:hover {
+  transform: translateY(-4px);
+}
+
+.dashboard-enter:hover svg {
+  transition: transform 0.35s ease, color 0.35s ease;
+}
+
+.dashboard-enter:hover svg:first-child {
+  color: #c4b5fd;
+}
+
+/* Featured banner */
+
+.featured-banner {
+  isolation: isolate;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+.featured-banner:hover {
+  border-color: rgba(167, 139, 250, 0.35);
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.12);
+}
+
+.featured-orb {
+  animation: orbFloat 8s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes orbFloat {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-15px, -15px, 0) scale(1.15);
+  }
+}
+
+/* Calendar */
+
+.calendar-panel {
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.calendar-nav {
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.calendar-nav:hover {
+  transform: scale(1.08);
+}
+
+.calendar-day:not(:disabled):hover {
+  transform: scale(1.08);
+}
+
+.calendar-content {
+  animation: calendarReveal 0.3s ease both;
+}
+
+@keyframes calendarReveal {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Schedule */
+
+.schedule-card {
+  animation: scheduleReveal 0.35s ease both;
+}
+
+@keyframes scheduleReveal {
+  from {
+    opacity: 0;
+    transform: translateX(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Button interaction */
+
+.primary-action,
+.featured-banner a {
+  will-change: transform;
+}
+
+/* Smooth scrolling */
+
+.dashboard-page {
+  scroll-behavior: smooth;
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard-page *,
+  .dashboard-page *::before,
+  .dashboard-page *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+
+/* =========================================
+   COURSE CARD EFFECTS
+========================================= */
+
+.course-card {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.course-thumbnail {
+  isolation: isolate;
+}
+
+.course-thumbnail::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.08) 50%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
+}
+
+.course-card:hover .course-thumbnail::after {
+  transform: translateX(120%);
+}
+
+.thumbnail-orb,
+.thumbnail-shape {
+  pointer-events: none;
+}
+
+.thumbnail-initial {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.course-action svg {
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover .course-action {
+  border-color: rgba(167, 139, 250, 0.3);
+}
+
+.course-card:focus-within {
+  outline: 2px solid rgba(167, 139, 250, 0.5);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-card,
+  .course-card * {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+
+
+/* =========================================
+   LESSON VIEWER ANIMATIONS
+========================================= */
+
+.lesson-viewer-page {
+  animation: lessonPageReveal 0.5s ease both;
+}
+
+@keyframes lessonPageReveal {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lesson-enter {
+  animation: lessonSectionReveal 0.55s cubic-bezier(.2,.7,.2,1) both;
+}
+
+@keyframes lessonSectionReveal {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lesson-delay-1 { animation-delay: 80ms; }
+.lesson-delay-2 { animation-delay: 150ms; }
+.lesson-delay-3 { animation-delay: 220ms; }
+
+/* Lesson content switching */
+
+.lesson-content-transition {
+  animation: lessonContentReveal 0.35s ease both;
+}
+
+@keyframes lessonContentReveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Navigation hover */
+
+.lesson-nav-button {
+  transition: all 0.25s ease;
+}
+
+.lesson-nav-button:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .lesson-viewer-page *,
+  .lesson-viewer-page *::before,
+  .lesson-viewer-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+
+/* ========================================
+   ADMIN DASHBOARD ANIMATIONS
+======================================== */
+
+.admin-dashboard {
+  animation: adminPageEnter 0.45s ease both;
+}
+
+@keyframes adminPageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-enter {
+  animation: adminSectionEnter 0.6s ease both;
+}
+
+@keyframes adminSectionEnter {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-stat-card {
+  animation: adminSectionEnter 0.55s ease both;
+}
+
+.admin-panel {
+  transition:
+    border-color 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.admin-panel:hover {
+  border-color: rgba(167, 139, 250, 0.17);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .admin-dashboard,
+  .admin-enter,
+  .admin-stat-card {
+    animation: none !important;
+  }
+
+  .admin-dashboard *,
+  .admin-dashboard *::before,
+  .admin-dashboard *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
+
+
+/* ========================================
+   COURSE MANAGEMENT PAGE
+======================================== */
+
+.course-management {
+  animation: coursePageEnter 0.45s ease both;
+}
+
+@keyframes coursePageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.course-stat-card {
+  animation: courseCardEnter 0.55s ease both;
+}
+
+@keyframes courseCardEnter {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.course-table-row {
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.course-table-row:hover {
+  box-shadow: inset 2px 0 0 rgba(167, 139, 250, 0.65);
+}
+
+.course-management input,
+.course-management select {
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.course-management button:focus-visible,
+.course-management a:focus-visible,
+.course-management input:focus-visible,
+.course-management select:focus-visible {
+  outline: 2px solid rgba(167, 139, 250, 0.7);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .course-management,
+  .course-stat-card {
+    animation: none !important;
+  }
+
+  .course-management *,
+  .course-management *::before,
+  .course-management *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ========================================
+   HEADER INTERACTIONS
+======================================== */
+
+.header-dropdown {
+  transform-origin: top right;
+  animation: headerDropdownEnter 0.18s ease-out both;
+}
+
+@keyframes headerDropdownEnter {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.98);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Header controls */
+header button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+header button:focus-visible,
+header a:focus-visible {
+  outline: 2px solid rgba(167, 139, 250, 0.7);
+  outline-offset: 3px;
+}
+
+/* Dropdown scrollbar */
+.header-dropdown ::-webkit-scrollbar {
+  width: 4px;
+}
+
+.header-dropdown ::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.header-dropdown ::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.2);
+  border-radius: 10px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .header-dropdown {
+    animation: none !important;
+  }
+}

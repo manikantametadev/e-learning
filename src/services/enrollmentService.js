@@ -1,0 +1,1 @@
+import {storage} from './storageService'; export const getEnrollments=()=>storage.get('ms-enrollments',[1,2,5]); export const enroll=(id)=>storage.set('ms-enrollments',[...new Set([...getEnrollments(),Number(id)])]);

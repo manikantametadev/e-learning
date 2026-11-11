@@ -1,0 +1,1 @@
+import AppRoutes from './routes/AppRoutes';import AuthProvider from './context/AuthContext';import CourseProvider from './context/CourseContext';import ProgressProvider from './context/ProgressContext';export default function App(){return <AuthProvider><CourseProvider><ProgressProvider><AppRoutes/></ProgressProvider></CourseProvider></AuthProvider>}

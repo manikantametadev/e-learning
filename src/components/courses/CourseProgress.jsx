@@ -1,0 +1,1 @@
+import ProgressBar from '../common/ProgressBar';export default function CourseProgress({value}){return <div><div className="mb-2 flex justify-between text-xs"><span className="text-slate-500">Course progress</span><span>{value}%</span></div><ProgressBar value={value}/></div>}

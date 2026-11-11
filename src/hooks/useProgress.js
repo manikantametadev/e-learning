@@ -1,0 +1,1 @@
+import useLocalStorage from './useLocalStorage';export default function useProgress(){const [progress,setProgress]=useLocalStorage('ms-progress',{});const update=(id,value)=>setProgress({...progress,[id]:value});return {progress,update}}
