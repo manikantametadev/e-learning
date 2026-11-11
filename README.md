@@ -30,3 +30,7 @@ npm run preview
 - The project uses local demo data in `src/data` and localStorage for enrollment/progress examples.
 - No backend or authentication service is connected.
 - Replace demo avatars and course artwork with your own assets in `public/images`.
+
+
+Deployed Link : https://e-learning-management-five.vercel.app
+
